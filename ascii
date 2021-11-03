@@ -1,0 +1,51 @@
+#! /usr/bin/env perl
+use strict;
+use warnings;
+my %mnemonics = (
+    0   => "NUL",
+    1   => "SOH",
+    2   => "STX",
+    3   => "ETX",
+    4   => "EOT",
+    5   => "ENQ",
+    6   => "ACK",
+    7   => "BEL",
+    8   => "BS",
+    9   => "HT",
+    10  => "LF",
+    11  => "VT",
+    12  => "FF",
+    13  => "CR",
+    14  => "SO",
+    15  => "SI",
+    16  => "DLE",
+    17  => "DC1",
+    18  => "DC2",
+    19  => "DC3",
+    20  => "DC4",
+    21  => "NAK",
+    22  => "SYN",
+    23  => "ETB",
+    24  => "CAN",
+    25  => "EM",
+    26  => "SUB",
+    27  => "ESC",
+    28  => "FS",
+    29  => "GS",
+    30  => "RS",
+    31  => "US",
+    127 => "DEL",
+);
+my @pad = ( 4, 4, 2, 2, 2, 3, 3, 0 );
+print
+    "Dec Hex    Dec Hex    Dec Hex  Dec Hex  Dec Hex  Dec Hex   Dec Hex   Dec Hex\n";
+for ( my $line = 0; $line < 16; $line++ ) {
+    for ( my $col = 0; $col < 8; $col++ ) {
+        my $ord    = $col * 16 + $line;
+        my $char   = $mnemonics{$ord} || chr($ord);
+        printf "%3d %02X %-*s", $ord, $ord, $pad[$col], $char;
+    }
+    print "\n";
+}
+
+# vim: set syntax=perl ts=4 sts=4 sw=4 expandtab:
