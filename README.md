@@ -1,6 +1,6 @@
 # lean-moreutils
 
-Because sometimes I "only" have ["Git Bash"](https://gitforwindows.org/)
+Because sometimes I *only* have [Git Bash](https://gitforwindows.org/)
 available, I miss some handy tools :-(
 
 So...
